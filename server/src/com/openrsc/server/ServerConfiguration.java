@@ -343,6 +343,7 @@ public class ServerConfiguration {
 	public boolean ALLOW_BEARDED_LADIES;
 	public boolean WANT_BUGGED_CLAWS_XP;
 	public boolean HEALSTAT_ON_CURRENT_STAT;
+	public boolean ALKHARID_GATE_OPENS_WHEN_CLICKED;
 
 	public ImmutableList<String> IGNORED_NETWORK_EXCEPTIONS =
 		ImmutableList.of("An existing connection was forcibly closed by the remote host",
@@ -631,6 +632,7 @@ public class ServerConfiguration {
 		WANT_INSTANCED_NPCS = tryReadBool("want_instanced_npcs").orElse(false);
 		EQUIP_QUEST_ITEMS_WITHOUT_QUESTS = tryReadBool("equip_quest_items_without_quests").orElse(false);
 		WANT_PACKET_REGISTER = tryReadBool("want_packet_register").orElse(true);
+		ALKHARID_GATE_OPENS_WHEN_CLICKED = tryReadBool("alkharid_gate_opens_when_clicked").orElse(false);
 
 		// Party settings
 		WANT_PARTIES = tryReadBool("want_parties").orElse(false);

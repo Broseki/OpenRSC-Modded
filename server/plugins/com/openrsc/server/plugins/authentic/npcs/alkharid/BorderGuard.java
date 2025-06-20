@@ -78,7 +78,17 @@ public final class BorderGuard implements
 	@Override
 	public void onOpLoc(Player player, GameObject obj, String command) {
 		if (obj.getID() == 180 && command.equals("open")) {
-			player.message("You need to talk to the border guard");
+			if ((player.getQuestStage(Quests.PRINCE_ALI_RESCUE) == -1
+				|| player.getQuestStage(Quests.PRINCE_ALI_RESCUE) == 3)
+				&& player.getConfig().ALKHARID_GATE_OPENS_WHEN_CLICKED) {
+				player.message("The gate swings open");
+				if (player.getX() > 91)
+					player.teleport(90, 649, false);
+				else
+					player.teleport(93, 649, false);
+			} else {
+				player.message("You need to talk to the border guard");
+			}
 		}
 	}
 
